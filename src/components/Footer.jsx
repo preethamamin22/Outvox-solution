@@ -8,9 +8,12 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <Link to="/" className="logo" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
-                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
-                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+              <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)', gap: '8px' }}>
+                <div>
+                  <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
+                  <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+                </div>
+                <span style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>SOLUTION</span>
               </div>
             </Link>
             <p style={{ marginBottom: '20px' }}>
@@ -59,7 +62,7 @@ export default function Footer() {
             <ul className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                 <MapPin size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />
-                <span>123 Business Avenue, Tech District, City 10001</span>
+                <span>Bengaluru, Karnataka, India</span>
               </li>
               <li style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <Phone size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />

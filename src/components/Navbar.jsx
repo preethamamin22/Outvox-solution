@@ -30,9 +30,12 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="logo" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
-            <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
-            <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+          <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)', gap: '8px' }}>
+            <div>
+              <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
+              <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+            </div>
+            <span style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>SOLUTION</span>
           </div>
         </Link>
         

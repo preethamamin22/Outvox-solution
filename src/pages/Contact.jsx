@@ -23,7 +23,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Our Office</h4>
-                  <p style={{ color: 'var(--text-muted)' }}>123 Business Avenue, Tech District<br />City 10001, Country</p>
+                  <p style={{ color: 'var(--text-muted)' }}>Bengaluru, Karnataka<br />India</p>
                 </div>
               </div>
               
