@@ -74,7 +74,7 @@ export default function Home() {
       {/* Why Choose Us */}
       <section style={{ background: 'var(--bg-lighter)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
             <div className="animate-fade-up">
               <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Why <span className="text-gradient">Choose Us</span></h2>
               <p style={{ fontSize: '1.1rem', marginBottom: '30px' }}>We don't just provide services; we partner with you to ensure your business achieves maximum efficiency and growth.</p>

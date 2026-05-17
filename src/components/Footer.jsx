@@ -7,9 +7,11 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <Link to="/" className="logo" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-              <img src="/logo.png" alt="Outvox Solution Logo" style={{ height: '40px' }} />
-              <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Outvox Solution</span>
+            <Link to="/" className="logo" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
+                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
+                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+              </div>
             </Link>
             <p style={{ marginBottom: '20px' }}>
               Professional telecalling, customer support, and web solutions designed to help your business grow faster.

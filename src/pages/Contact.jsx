@@ -9,7 +9,7 @@ export default function Contact() {
           <p>Ready to transform your business? Let's discuss how we can help you scale.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'flex-start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
           <div className="animate-fade-up delay-1">
             <h3 style={{ fontSize: '2rem', marginBottom: '20px' }}>Contact Information</h3>
             <p style={{ marginBottom: '40px', fontSize: '1.1rem' }}>
