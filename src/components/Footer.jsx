@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <Link to="/" className="logo" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', background: 'var(--bg-lighter)', padding: '5px 12px', borderRadius: '12px', border: '1px solid var(--glass-border)', gap: '8px' }}>
+              <div className="logo-container">
                 <div>
-                  <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--secondary)' }}>OUT</span>
-                  <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary)' }}>VOX</span>
+                  <span className="logo-out">OUT</span>
+                  <span className="logo-vox">VOX</span>
                 </div>
-                <span style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-muted)', letterSpacing: '1px', textTransform: 'uppercase' }}>SOLUTION</span>
+                <span className="logo-solution">SOLUTION</span>
               </div>
             </Link>
             <p style={{ marginBottom: '20px' }}>
