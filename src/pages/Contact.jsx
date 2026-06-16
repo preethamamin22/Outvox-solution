@@ -52,7 +52,7 @@ export default function Contact() {
           <div className="glass-panel animate-fade-up delay-2" style={{ padding: '40px' }}>
             <h3 style={{ fontSize: '1.8rem', marginBottom: '30px' }}>Send us a Message</h3>
             <form onSubmit={e => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              <div className="contact-name-grid">
                 <div>
                   <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>First Name</label>
                   <input type="text" placeholder="John" style={{ width: '100%', padding: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px', color: '#fff', outline: 'none' }} />

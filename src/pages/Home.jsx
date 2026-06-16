@@ -20,7 +20,7 @@ export default function Home() {
             <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto 40px', color: 'var(--text-muted)' }}>
               Professional telecalling, customer support, and web solutions designed to help your business grow faster. Elevate your customer experience today.
             </p>
-            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="hero-actions" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/contact" className="btn btn-primary">
                 Book Free Consultation <ArrowRight size={20} />
               </Link>
@@ -204,7 +204,7 @@ export default function Home() {
       {/* CTA Banner */}
       <section style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="glass-panel" style={{ padding: '60px 40px', textAlign: 'center', background: 'linear-gradient(135deg, rgba(0,85,255,0.1), rgba(0,240,255,0.05))', borderColor: 'rgba(0,240,255,0.2)' }}>
+          <div className="glass-panel cta-banner-inner" style={{ padding: '60px 40px', textAlign: 'center', background: 'linear-gradient(135deg, rgba(0,85,255,0.1), rgba(0,240,255,0.05))', borderColor: 'rgba(0,240,255,0.2)' }}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Ready to Scale Your Operations?</h2>
             <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 30px' }}>Join hundreds of fast-growing companies that trust Outvox Solution for their customer support and digital needs.</p>
             <Link to="/contact" className="btn btn-primary">

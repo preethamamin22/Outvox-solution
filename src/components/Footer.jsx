@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import outvoxLogo from '../assets/outvox-logo.svg';
 
 export default function Footer() {
   return (
@@ -7,14 +8,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <Link to="/" className="logo" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              <div className="logo-container">
-                <div>
-                  <span className="logo-out">OUT</span>
-                  <span className="logo-vox">VOX</span>
-                </div>
-                <span className="logo-solution">SOLUTION</span>
-              </div>
+            <Link to="/" className="footer-logo-link" style={{ marginBottom: '20px', display: 'inline-block' }}>
+              <img src={outvoxLogo} alt="Outvox Solution" style={{ height: '64px', width: 'auto' }} />
             </Link>
             <p style={{ marginBottom: '20px' }}>
               Professional telecalling, customer support, and web solutions designed to help your business grow faster.

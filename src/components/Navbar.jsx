@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, PhoneCall } from 'lucide-react';
+import outvoxLogo from '../assets/outvox-logo.svg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,6 +16,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  // Lock body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
 
   const links = [
@@ -27,43 +39,69 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        <Link to="/" className="logo" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div className="logo-container">
-            <div>
-              <span className="logo-out">OUT</span>
-              <span className="logo-vox">VOX</span>
-            </div>
-            <span className="logo-solution">SOLUTION</span>
+    <>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="container nav-container">
+          {/* Logo with actual image */}
+          <Link to="/" className="nav-logo" onClick={closeMenu}>
+            <img src={outvoxLogo} alt="Outvox Solution" className="nav-logo-img" />
+          </Link>
+
+          {/* Desktop nav links */}
+          <div className="nav-links">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={location.pathname === link.path ? 'active' : ''}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
-        </Link>
-        
-        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {links.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path} 
-              className={location.pathname === link.path ? 'active' : ''}
-              onClick={closeMenu}
-            >
-              {link.name}
-            </Link>
-          ))}
-          
-          <Link to="/contact" className="btn btn-primary nav-action" style={{ display: menuOpen ? 'inline-flex' : 'none' }} onClick={closeMenu}>
+
+          {/* Desktop CTA */}
+          <Link to="/contact" className="btn btn-primary nav-action nav-action-desktop">
+            <PhoneCall size={18} /> Let's Talk
+          </Link>
+
+          {/* Hamburger */}
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Drawer */}
+      <div className={`mobile-drawer ${menuOpen ? 'open' : ''}`}>
+        <div className="mobile-drawer-inner">
+          <div className="mobile-drawer-logo">
+            <img src={outvoxLogo} alt="Outvox Solution" style={{ height: '56px' }} />
+          </div>
+          <nav className="mobile-nav-links">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                onClick={closeMenu}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <Link to="/contact" className="btn btn-primary mobile-cta" onClick={closeMenu}>
             <PhoneCall size={18} /> Let's Talk
           </Link>
         </div>
-
-        <Link to="/contact" className="btn btn-primary nav-action" style={{ padding: '10px 24px', display: menuOpen ? 'none' : 'inline-flex' }}>
-          <PhoneCall size={18} /> Let's Talk
-        </Link>
-
-        <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
-    </nav>
+
+      {/* Overlay */}
+      {menuOpen && <div className="mobile-overlay" onClick={closeMenu} />}
+    </>
   );
 }
