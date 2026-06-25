@@ -206,17 +206,13 @@ section {
   flex-shrink: 0;
 }
 .nav-logo-img {
-  height: 52px;
+  height: 64px;
   width: auto;
-  /* White background pill for visibility on dark navbar */
-  background: rgba(255,255,255,0.92);
-  border-radius: 10px;
-  padding: 4px 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .nav-logo-img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 4px 16px rgba(0,102,204,0.25);
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(0, 102, 204, 0.4));
 }
 
 /* Desktop nav links */
@@ -487,8 +483,7 @@ footer {
 
   /* Logo */
   .nav-logo-img {
-    height: 44px;
-    padding: 3px 6px;
+    height: 54px;
   }
 
   /* Footer */
@@ -544,7 +539,7 @@ footer {
   }
 
   .nav-logo-img {
-    height: 38px;
+    height: 46px;
   }
 }
 
@@ -585,5 +580,143 @@ footer {
 @media (max-width: 480px) {
   .hero-actions .btn {
     max-width: 100%;
+  }
+}
+
+/* =====================
+   TRUSTED BY MARQUEE
+   ===================== */
+.trusted-by {
+  padding: 50px 0;
+  background: linear-gradient(180deg, rgba(3, 8, 17, 0.4) 0%, rgba(8, 17, 34, 0.4) 100%);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.trusted-by-title {
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 32px;
+  opacity: 0.8;
+}
+
+.marquee-container {
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  gap: 80px;
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100%;
+  gap: 80px;
+  animation: scroll-marquee 25s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo-wrapper:hover {
+  transform: scale(1.08);
+}
+
+.brand-logo-svg {
+  height: 32px;
+  width: auto;
+  fill: currentColor;
+  color: var(--text-muted);
+  opacity: 0.65;
+  transition: color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Colors for Logos */
+.logo-grabfood:hover .brand-logo-svg {
+  color: #00B14F; /* GrabFood Green */
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(0, 177, 79, 0.3));
+}
+
+.logo-stories:hover .brand-logo-svg {
+  color: #FFFFFF; /* High-contrast white */
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.logo-ondc:hover .brand-logo-svg {
+  color: #0066cc; /* ONDC Blue */
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 204, 0.3));
+}
+
+.logo-rapido:hover .brand-logo-svg {
+  color: #FFF500; /* Rapido Yellow */
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 245, 0, 0.3));
+}
+.rapido-bg {
+  fill: currentColor;
+  opacity: 0.15;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+}
+.rapido-text {
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+.logo-rapido:hover .rapido-bg {
+  fill: #FFF500 !important;
+  opacity: 1 !important;
+}
+.logo-rapido:hover .rapido-text {
+  fill: #000000 !important;
+}
+
+.logo-flipkart:hover .brand-logo-svg {
+  color: #2874F0; /* Flipkart Blue */
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(40, 116, 240, 0.3));
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 80px));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trusted-by {
+    padding: 35px 0;
+  }
+  .trusted-by-title {
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+  }
+  .brand-logo-svg {
+    height: 26px;
   }
 }

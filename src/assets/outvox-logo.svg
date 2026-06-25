@@ -1,59 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a8fe3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0052cc;stop-opacity:1" />
+    <!-- Glowing Ring Gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="80%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#FF5500" />
+      <stop offset="30%" stop-color="#FF6600" />
+      <stop offset="70%" stop-color="#0055FF" />
+      <stop offset="100%" stop-color="#0099FF" />
     </linearGradient>
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ff5500;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="barBlue" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" style="stop-color:#1a8fe3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00c2ff;stop-opacity:1" />
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,82,204,0.3)"/>
+
+    <!-- Ring Glow Filter -->
+    <filter id="ringGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComponentTransfer in="blur" result="boost">
+        <feFuncA type="linear" slope="1.8"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="boost" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Text Shadow Filter -->
+    <filter id="textShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Bar chart bars above bubble -->
-  <!-- Orange bar (left) -->
-  <rect x="112" y="22" width="12" height="28" rx="3" fill="url(#orangeGrad)"/>
-  <!-- Orange bar (middle-left) -->
-  <rect x="128" y="14" width="12" height="36" rx="3" fill="url(#orangeGrad)"/>
-  <!-- Blue bar (middle-right) -->
-  <rect x="144" y="6" width="12" height="44" rx="3" fill="url(#barBlue)"/>
-  <!-- Blue bar (right, tallest) -->
-  <rect x="160" y="0" width="12" height="50" rx="3" fill="url(#barBlue)"/>
+  <!-- Subtle inner radial depth glow -->
+  <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#0055FF" stop-opacity="0.12" />
+    <stop offset="100%" stop-color="#030811" stop-opacity="0" />
+  </radialGradient>
+  <circle cx="250" cy="250" r="198" fill="url(#bgGlow)" />
 
-  <!-- Orange swoosh arc (bottom-left of bubble) -->
-  <path d="M 90 100 Q 78 140 108 155 Q 96 130 105 110 Z" fill="url(#orangeGrad)" opacity="0.9"/>
+  <!-- Outer Glass Reflection Ring (Subtle 3D edge) -->
+  <circle cx="250" cy="250" r="202" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
 
-  <!-- Main blue chat bubble -->
-  <ellipse cx="148" cy="95" rx="58" ry="58" fill="url(#blueGrad)" filter="url(#shadow)"/>
-  <!-- Chat bubble tail -->
-  <path d="M 120 145 Q 110 165 98 170 Q 118 162 132 152 Z" fill="url(#blueGrad)"/>
+  <!-- Main Glowing Ring (Background Blur for Glow) -->
+  <circle cx="250" cy="250" r="196" fill="none" stroke="url(#ringGrad)" stroke-width="10" filter="url(#ringGlow)" opacity="0.9" />
 
-  <!-- Headset icon (white) -->
-  <!-- Head circle -->
-  <circle cx="148" cy="88" r="18" fill="white" opacity="0.95"/>
-  <!-- Headset arc -->
-  <path d="M 130 85 Q 130 65 148 65 Q 166 65 166 85" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <!-- Left ear piece -->
-  <rect x="127" y="83" width="7" height="11" rx="3" fill="white"/>
-  <!-- Right ear piece -->
-  <rect x="164" y="83" width="7" height="11" rx="3" fill="white"/>
-  <!-- Mic boom -->
-  <path d="M 134 94 Q 130 102 138 106" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- Mic tip (orange dot) -->
-  <circle cx="139" cy="107" r="4" fill="url(#orangeGrad)"/>
+  <!-- Inner Edge Ring Reflection (Subtle 3D) -->
+  <circle cx="250" cy="250" r="190" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
 
-  <!-- Company name text -->
-  <!-- OUT in orange -->
-  <text x="62" y="175" font-family="'Outfit', 'Arial Black', sans-serif" font-weight="900" font-size="30" fill="#ff6600" letter-spacing="1">OUT</text>
-  <!-- VOX in blue gradient - using blue fill -->
-  <text x="115" y="175" font-family="'Outfit', 'Arial Black', sans-serif" font-weight="900" font-size="30" fill="#0066cc" letter-spacing="1">VOX</text>
-  <!-- SOLUTION in dark gray, centered below -->
-  <text x="150" y="195" font-family="'Outfit', Arial, sans-serif" font-weight="600" font-size="14" fill="#444444" letter-spacing="4" text-anchor="middle">SOLUTION</text>
+  <!-- Centered Logo Text "OUTVOX" -->
+  <text x="250" y="258" text-anchor="middle" font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="800" font-size="82" letter-spacing="-1.5" filter="url(#textShadow)">
+    <tspan fill="#FF5500">OUT</tspan><tspan fill="#0077FF">VOX</tspan>
+  </text>
+
+  <!-- Centered Subtext "SOLUTION" -->
+  <text x="256" y="320" text-anchor="middle" font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="600" font-size="24" fill="#8B9BB4" letter-spacing="12" filter="url(#textShadow)">SOLUTION</text>
 </svg>
