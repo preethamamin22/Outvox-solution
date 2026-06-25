@@ -44,7 +44,7 @@ export default function Contact() {
                 <div>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Email Address</h4>
                   <a href="mailto:preetham@outvoxsolution.com" style={{ color: 'var(--text-muted)', wordBreak: 'break-all' }}>
-                    preetham@outvoxsolution.com
+                    info@outvoxsolution.com
                   </a>
                 </div>
               </div>

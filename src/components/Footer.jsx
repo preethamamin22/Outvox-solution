@@ -125,7 +125,7 @@ export default function Footer() {
               <li style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <Mail size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />
                 <a href="mailto:preetham@outvoxsolution.com" style={{ color: 'var(--text-muted)', wordBreak: 'break-all' }}>
-                  preetham@outvoxsolution.com
+                  info@outvoxsolution.com
                 </a>
               </li>
             </ul>
