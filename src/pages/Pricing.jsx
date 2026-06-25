@@ -30,18 +30,18 @@ export default function Pricing() {
   ];
 
   return (
-    <div style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+    <div className="pricing-page" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="container">
         <div className="section-header animate-fade-up">
           <h2>Transparent <span className="text-gradient">Pricing</span></h2>
           <p>Choose the right plan to scale your customer support and digital operations.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', alignItems: 'center' }}>
           {plans.map((plan, idx) => (
-            <div key={idx} className={`glass-panel animate-fade-up delay-${idx+1}`} style={{ padding: '40px 30px', position: 'relative', border: plan.highlight ? '1px solid var(--primary)' : '', transform: plan.highlight ? 'scale(1.05)' : 'scale(1)', boxShadow: plan.highlight ? '0 10px 40px rgba(0, 102, 204, 0.15)' : '' }}>
+            <div key={idx} className={`glass-panel animate-fade-up delay-${idx+1}`} style={{ padding: '40px 30px', position: 'relative', border: plan.highlight ? '1px solid var(--primary)' : '', boxShadow: plan.highlight ? '0 10px 40px rgba(0, 102, 204, 0.15)' : '' }}>
               {plan.highlight && (
-                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: 'var(--gradient-blue)', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '1px' }}>
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: 'var(--gradient-blue)', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '1px', whiteSpace: 'nowrap' }}>
                   MOST POPULAR
                 </div>
               )}
@@ -54,7 +54,7 @@ export default function Pricing() {
               <ul style={{ listStyle: 'none', marginBottom: '40px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 {plan.features.map((feature, fIdx) => (
                   <li key={fIdx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <CheckCircle size={18} style={{ color: 'var(--primary)' }} />
+                    <CheckCircle size={18} style={{ color: 'var(--primary)', flexShrink: 0 }} />
                     <span>{feature}</span>
                   </li>
                 ))}

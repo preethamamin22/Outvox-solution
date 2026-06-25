@@ -27,7 +27,7 @@ export default function Services() {
   ];
 
   return (
-    <div style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+    <div className="services-page" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="container">
         <div className="section-header animate-fade-up">
           <h2>Our <span className="text-gradient">Services</span></h2>
@@ -40,7 +40,7 @@ export default function Services() {
               <div style={{ width: '100px', height: '100px', borderRadius: '24px', background: service.bg, color: service.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 {service.icon}
               </div>
-              <div style={{ flex: '1 1 300px' }}>
+              <div style={{ flex: '1 1 260px' }}>
                 <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>{service.title}</h3>
                 <p style={{ fontSize: '1.1rem', marginBottom: '20px' }}>{service.desc}</p>
                 <Link to="/contact" className="btn btn-outline" style={{ borderColor: service.color, color: '#fff' }}>

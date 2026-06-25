@@ -2,14 +2,14 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+    <div className="contact-page" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="container">
         <div className="section-header animate-fade-up">
           <h2>Get in <span className="text-gradient">Touch</span></h2>
           <p>Ready to transform your business? Let's discuss how we can help you scale.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
           <div className="animate-fade-up delay-1">
             <h3 style={{ fontSize: '2rem', marginBottom: '20px' }}>Contact Information</h3>
             <p style={{ marginBottom: '40px', fontSize: '1.1rem' }}>
@@ -33,7 +33,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Phone Number</h4>
-                  <p style={{ color: 'var(--text-muted)' }}>+91 8296748983</p>
+                  <a href="tel:+918296748983" style={{ color: 'var(--text-muted)' }}>+91 8296748983</a>
                 </div>
               </div>
 
@@ -43,7 +43,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Email Address</h4>
-                  <p style={{ color: 'var(--text-muted)' }}>preetham@outvoxsolution.com</p>
+                  <a href="mailto:preetham@outvoxsolution.com" style={{ color: 'var(--text-muted)', wordBreak: 'break-all' }}>
+                    preetham@outvoxsolution.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -71,7 +73,7 @@ export default function Contact() {
               <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>Service Interested In</label>
                 <select style={{ width: '100%', padding: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px', color: '#fff', outline: 'none', appearance: 'none' }}>
-                  <option value="" disabled selected style={{ color: '#000' }}>Select a service</option>
+                  <option value="" disabled defaultValue style={{ color: '#000' }}>Select a service</option>
                   <option value="telecalling" style={{ color: '#000' }}>Telecalling</option>
                   <option value="ecommerce" style={{ color: '#000' }}>E-commerce Support</option>
                   <option value="web" style={{ color: '#000' }}>Web Development</option>

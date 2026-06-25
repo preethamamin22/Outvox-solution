@@ -1,13 +1,13 @@
 export default function About() {
   return (
-    <div style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+    <div className="about-page" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="container">
         <div className="section-header animate-fade-up">
           <h2>About <span className="text-gradient">Outvox Solution</span></h2>
           <p>We are a premium BPO and digital agency dedicated to helping businesses scale with smart solutions.</p>
         </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', marginTop: '60px', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '60px', marginTop: '60px', alignItems: 'center' }}>
           <div className="glass-panel animate-fade-up" style={{ padding: '20px' }}>
             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Team" style={{ width: '100%', borderRadius: '12px', display: 'block' }} />
           </div>
