@@ -586,6 +586,10 @@ footer {
 /* =====================
    TRUSTED BY MARQUEE
    ===================== */
+:root {
+  --marquee-gap: 80px;
+}
+
 .trusted-by {
   padding: 50px 0;
   background: linear-gradient(180deg, rgba(3, 8, 17, 0.4) 0%, rgba(8, 17, 34, 0.4) 100%);
@@ -610,7 +614,7 @@ footer {
   overflow: hidden;
   display: flex;
   user-select: none;
-  gap: 80px;
+  gap: var(--marquee-gap);
   mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
 }
@@ -621,7 +625,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   min-width: 100%;
-  gap: 80px;
+  gap: var(--marquee-gap);
   animation: scroll-marquee 25s linear infinite;
 }
 
@@ -644,57 +648,34 @@ footer {
 .brand-logo-svg {
   height: 32px;
   width: auto;
-  fill: currentColor;
-  color: var(--text-muted);
-  opacity: 0.65;
-  transition: color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0.8; /* Muted opacity by default for perfect blending */
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
 }
 
-/* Hover Colors for Logos */
+/* Hover Glowing Effects for Logos (using brand colors) */
 .logo-grabfood:hover .brand-logo-svg {
-  color: #00B14F; /* GrabFood Green */
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(0, 177, 79, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 177, 79, 0.4));
 }
 
 .logo-stories:hover .brand-logo-svg {
-  color: #FFFFFF; /* High-contrast white */
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
 .logo-ondc:hover .brand-logo-svg {
-  color: #0066cc; /* ONDC Blue */
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(0, 102, 204, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 119, 255, 0.4));
 }
 
 .logo-rapido:hover .brand-logo-svg {
-  color: #FFF500; /* Rapido Yellow */
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(255, 245, 0, 0.3));
-}
-.rapido-bg {
-  fill: currentColor;
-  opacity: 0.15;
-  transition: fill 0.3s ease, opacity 0.3s ease;
-}
-.rapido-text {
-  fill: currentColor;
-  transition: fill 0.3s ease;
-}
-.logo-rapido:hover .rapido-bg {
-  fill: #FFF500 !important;
-  opacity: 1 !important;
-}
-.logo-rapido:hover .rapido-text {
-  fill: #000000 !important;
+  filter: drop-shadow(0 0 8px rgba(255, 245, 0, 0.4));
 }
 
 .logo-flipkart:hover .brand-logo-svg {
-  color: #2874F0; /* Flipkart Blue */
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(40, 116, 240, 0.3));
+  filter: drop-shadow(0 0 8px rgba(40, 116, 240, 0.4));
 }
 
 @keyframes scroll-marquee {
@@ -702,12 +683,15 @@ footer {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% - 80px));
+    transform: translateX(calc(-100% - var(--marquee-gap)));
   }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  :root {
+    --marquee-gap: 50px;
+  }
   .trusted-by {
     padding: 35px 0;
   }
@@ -717,6 +701,23 @@ footer {
     letter-spacing: 2px;
   }
   .brand-logo-svg {
-    height: 26px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --marquee-gap: 32px;
+  }
+  .trusted-by {
+    padding: 25px 0;
+  }
+  .trusted-by-title {
+    font-size: 0.75rem;
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+  }
+  .brand-logo-svg {
+    height: 20px;
   }
 }
