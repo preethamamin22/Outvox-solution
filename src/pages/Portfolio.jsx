@@ -7,7 +7,7 @@ export default function Portfolio() {
       category: 'Hospitality & Travel',
       desc: 'A premium nature resort platform with elegant booking flow, immersive photo galleries, and mobile-first design.',
       url: 'https://www.ananyahomestays.com/',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/portfolio/ananya.png',
       color: '#00B14F',
     },
     {
@@ -15,7 +15,7 @@ export default function Portfolio() {
       category: 'Interior Design',
       desc: 'A minimalist, high-impact showcase for a contemporary interior design studio — clean UI with stunning visual storytelling.',
       url: 'https://zen-nuc-deco.vercel.app/',
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/portfolio/zen_nuc.png',
       color: '#8B7355',
     },
     {
@@ -23,7 +23,7 @@ export default function Portfolio() {
       category: 'Industrial & Corporate',
       desc: 'A strong, trust-inspiring corporate website for a high-quality concrete and building materials manufacturer in Karnataka.',
       url: 'https://sree-shoba-concretes.vercel.app/',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/portfolio/sree_shoba.png',
       color: '#0066cc',
     },
     {
@@ -31,7 +31,7 @@ export default function Portfolio() {
       category: 'Luxury E-commerce',
       desc: 'An artisanal wooden furniture showcase platform with a rich, luxurious aesthetic and intuitive product browsing experience.',
       url: 'https://alankaram.vercel.app/',
-      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/portfolio/alankaram.png',
       color: '#C8860A',
     },
     {
@@ -39,7 +39,7 @@ export default function Portfolio() {
       category: 'Spiritual & Community',
       desc: 'A devotional community portal with event listings, online booking, and spiritual content for a trusted religious institution.',
       url: 'https://shreevaraha.vercel.app/',
-      image: 'https://images.unsplash.com/photo-1609501676725-7186f017a4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/portfolio/shree_varaha.png',
       color: '#FF5500',
     },
   ];
